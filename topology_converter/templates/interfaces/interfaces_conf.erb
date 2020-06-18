@@ -1,0 +1,13 @@
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0
+    address <%= ip_address %>
+
+<% if vagrant_iface %>
+auto vagrant
+iface vagrant inet dhcp
+<% end %>
+
+source /etc/network/interfaces.d/*
